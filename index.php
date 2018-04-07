@@ -162,8 +162,6 @@
 
 
 
-
-
 <!-- FOOTER PART  -->
 <div class="footer">
 	<ul>
