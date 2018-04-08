@@ -1,0 +1,115 @@
+html,body{
+	margin:0px 0px;
+	padding: 5px 5px 5px 5px;
+	overflow: hidden;
+	background: #ECEFF1;
+}
+.container{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1em;
+}
+
+
+.container > div{
+	padding: 1em;
+	background: #f2f2f2;
+	text-align: justify;
+	opacity: 1;
+}
+
+.container > div:nth-child(odd){
+	background: #f2f2f2;
+	opacity: 0.8;
+}
+
+
+
+/*
+CARD SHADOW CSS 
+FROM W3SCHOOL
+*/
+
+.card {
+   box-shadow: 0 4px 8px 0 
+			   rgba(0, 0, 0, 0.2), 
+			   0 6px 20px 0 
+			   rgba(0, 0, 0, 0.19);
+   transition: 0.3s;
+   cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
+
+.wrapper{
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr; 
+	grid-template-areas: '. . .'
+						 '. P .'
+						 '. . .';	
+}
+
+.wrapper > div{
+	background: #f2f2f2;
+	text-align: justify;
+}
+
+.wrapper > div:nth-child(odd){
+	background: #ddd;
+}
+
+.Project{
+	grid-area: P;
+	background: #ddd;
+	padding: 1em;
+}
+
+.alertBox{
+	padding: 5px; 
+	background: #F44336; 
+	width: 90%; 
+	font-family: 'Times New Roman'; 
+	font-size:20px; 
+	text-align: center; 
+	border-radius: 5px; 
+	color:#f2f2f2;
+}
+.gone{
+	display: none;
+}
+.error{
+	display: block;
+}
+
+button,textarea,input{
+	width: 90%;
+	padding: 1em;
+	border:none;
+	border-radius:2px;
+	background: #f2f2f2;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+button,input[type="submit"]{
+	width: 40%;
+	background: #607D8B;
+	color: #f2f2f2;
+	cursor: pointer;
+}
+
+
+input[type="date"]{
+	margin-top: 0;
+	margin-bottom: 5px;
+}
