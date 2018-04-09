@@ -45,6 +45,7 @@ html,body{
 	.SearchBarInNav{
 		display: none;
 	}
+
 	.SearchBar{
 		display: block;
 	}
@@ -65,7 +66,7 @@ html,body{
 
 	.Content{
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 5px;
 	}
 
@@ -95,9 +96,16 @@ html,body{
 .videoResult{
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows:8fr 2fr; 
+	grid-template-rows:8fr 2fr;
+	cursor: pointer; 
 }
+#ytplayer{
+	background:#333;
+	z-index: 1;
 
+	width: 800px;
+	height: auto;
+}
 .videoResult > .Title{
 	text-align: center;
 	text-align: center;
@@ -107,9 +115,13 @@ html,body{
 	font-family: "Times New Roman"; 
 	padding-top: 5px ;
 }
-.videoResult > .video{
 
+.video {
+	background-repeat: no-repeat;
+	background-size: auto 200px;
+	background-position: center;
 }
+
 /*FOR MOBILE DEVICES*/
 /*RESPONSIVE UI SETTINGS*/
 @media screen and (max-width: 720px) {
@@ -211,7 +223,9 @@ html,body{
 	top:0;
 }
 
-.topnav a {
+
+
+.topnav a{
   float: left;
   display: block;
   color: #f2f2f2;
@@ -323,7 +337,7 @@ li a:hover:not(.active) {
     box-sizing: border-box;
  }
 
-form.example input[type=text] {
+.example input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
@@ -332,7 +346,7 @@ form.example input[type=text] {
     background: #f1f1f1;
 }
 
-form.example button {
+.example button {
     float: left;
     width: 20%;
     padding: 10px;
@@ -344,11 +358,11 @@ form.example button {
     cursor: pointer;
 }
 
-form.example button:hover {
+.example button:hover {
     background: #0b7dda;
 }
 
-form.example::after {
+.example::after {
     content: "";
     clear: both;
 }

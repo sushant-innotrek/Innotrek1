@@ -19,6 +19,8 @@ function showPosition(position){
 	});
 }
 */
+
+
 function errorDetected(Msg){
 	console.log("Working");
 	var box = document.getElementById("ERROR");

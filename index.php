@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CHETAN</title>
+	<title>PICWORD</title>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -16,14 +17,13 @@
 <!-- NAVBAR CODE -->
 
 <div class="topnav" id="myTopnav">
-
+  <a style="padding: 5px 0 0 0;   pointer-events: none;"><img src="img/logo.png" width="50%" height="50%"></a>	
   <a href="#home" class="active">Home</a>
-  
   <a href="#news">News</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
   	<span class="SearchBarInNav">
-		<form class="example" action="/action_page.php" style="margin:5px;max-width:250px">
+		<form class="example" style="margin:5px;max-width:250px">
 		  <input type="text" placeholder="Search.." name="search2">
 		  <button type="submit"><i class="fa fa-search"></i></button>
 		</form>
@@ -37,111 +37,18 @@
 <!-- MAIN CONTAINER STARTS HERE -->
 
 <!-- SEARCH RESULTS GOES HERE -->
-<div class="wrapper">
+<div class="wrapper" id="holder">
 
-	<div class="Content">
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
+	<div class="Content" id="mainContainer">
 		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
 		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
-		
-		<div class="videoResult">
-			<div class="video"> </div>
-			<div class="Title">Title</div>
-		</div>
 	</div>
 	
 <!-- ADS GOES HERE -->
 	<div class="Ads">
 		
 		<span class="SearchBar">
-			<form class="example" action="/action_page.php">
+			<form class="example" onsubmit = "return Search(this.search.value);">
 			  <input type="text" placeholder="Search.." name="search">
 			  <button type="submit"><i class="fa fa-search"></i></button>
 			</form>
@@ -171,8 +78,8 @@
 </div>	
 <!-- FOOTER PART ENDS -->
 
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/youtubeapi.js"></script>
 <!-- JAVASCRIPTS GOES HERE -->
 
 <script>
