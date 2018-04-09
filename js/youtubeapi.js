@@ -1,5 +1,5 @@
 var Results;
-var URL1 = "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=15&q=";
+var URL1 = "https://www.googleapis.com/youtube/v3/search?part=snippet&videoCaption=closedCaption&type=video&maxResults=15&q=";
 var URL3 = "&key=AIzaSyCDTZCu2XIiQSP19sFrNLKi-KBrjH1ATmQ";
 var category=["How To/Tutorials","The Unboxing Video","Coding Train","Web Development","Software Development","Product Reviews"];
 
@@ -7,7 +7,7 @@ var category=["How To/Tutorials","The Unboxing Video","Coding Train","Web Develo
 function Search(searchstring) {
 	URL2 = searchstring.replace(/\s/g, "+");
 	URL = URL1+URL2+URL3;
-	console.log(URL);
+	
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
@@ -33,7 +33,7 @@ function showResults(items){
 
 		container.innerHTML+=formatResultView(thumb,Title,vid);
 	}	
-	console.log(items);
+	
 }
 
 function formatResultView(thumb,Title,vid){
@@ -46,28 +46,12 @@ function formatResultView(thumb,Title,vid){
 }
 
 function showVideo(vid){
-	console.log('Works');
 	var container = document.getElementById("mainContainer");
-	var videoElement=`<div id="ytplayer"></div>`;
+	var videoElement=`<div id="ytplayer">
+		<iframe width="800" height="100%" 
+			src="https://www.youtube.com/embed/`+vid+`?enablejsapi=1&hl=hi&autoplay=1">
+		</iframe>
+	</div>`;
 	container.innerHTML=videoElement;
-	startVideo(vid);
 }
 
-function startVideo(vid){
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var player;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      height: '800',
-      width: '600',
-      videoId: vid
-    });
-  }
-	
-} 

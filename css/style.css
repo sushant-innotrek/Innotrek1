@@ -100,10 +100,8 @@ html,body{
 	cursor: pointer; 
 }
 #ytplayer{
-	background:#333;
 	z-index: 1;
-
-	width: 800px;
+	width: 100%;
 	height: auto;
 }
 .videoResult > .Title{

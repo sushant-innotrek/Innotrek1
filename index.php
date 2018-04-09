@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>PICWORD</title>
-
+	<script type="text/javascript" src="https://www.youtube.com/player_api"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -23,8 +23,8 @@
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
   	<span class="SearchBarInNav">
-		<form class="example" style="margin:5px;max-width:250px">
-		  <input type="text" placeholder="Search.." name="search2">
+		<form class="example"  onsubmit = "return Search(this.search.value);" style="margin:5px;max-width:250px">
+		  <input type="text" placeholder="Search.." name="search">
 		  <button type="submit"><i class="fa fa-search"></i></button>
 		</form>
   </span>
