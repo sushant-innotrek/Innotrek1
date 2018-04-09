@@ -3,6 +3,7 @@
 <head>
 	<title>Admin</title>
 	<link rel="stylesheet" type="text/css" href="css/style2.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 	
@@ -30,14 +31,13 @@
 
 				</form>	
 				
-				<div class="alertBox gone" id="ERROR">ERROR UPLOADING IMAGE</div></center>
+				<div class="alertBox gone" id="ERROR"></div></center>
 			</div>	
 
 	</div>
 
 
 <script type="text/javascript" src="js/admin.js" ></script>
-
 
 </body>
 </html>
@@ -56,29 +56,28 @@
 		$from = $_POST['ValidFrom'];
 		$to = $_POST['ValidTo'];
 
-		if(move_uploaded_file($Ad_temp, "Ads/".$Ad_temp)){
+		if(move_uploaded_file($Ad_temp, "Ads/".$Ad_file)){
 			$sql = "
-			INSERT INTO Advertisements
+			INSERT INTO advertisements
 			(Name, Location, Duration, ValidFrom, ValidTo, AdType, AdFile)
 			VALUES
 			('$title','$location',$time,'$from','$to','$Ad_type','$Ad_file')
 			";
 
-			
+			include "databaseHandle.php";
+			InsertAd($sql);
+			echo "
+			<script>
+				errorDetected('AD UPLOADED');
+			</script>";
+
 		}
 		else{
 			echo "
 			<script>
-				errorDetected();
+				errorDetected('ERROR UPLOADING IMAGE');
 			</script>";
 		}
-		echo $title;
-		echo $location;
-		echo $time;
-		echo $from;
-		echo $to;
-		echo $Ad_file;
-		echo $Ad_temp;
-		echo $Ad_type;
+		
 	}
 ?>
