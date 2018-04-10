@@ -48,10 +48,43 @@ function formatResultView(thumb,Title,vid){
 function showVideo(vid){
 	var container = document.getElementById("mainContainer");
 	var videoElement=`<div id="ytplayer">
-		<iframe width="800" height="100%" 
-			src="https://www.youtube.com/embed/`+vid+`?enablejsapi=1&hl=hi&autoplay=1">
+		<iframe width="800" height="500" 
+			src="https://www.youtube.com/embed/`+vid+`?enablejsapi=1&hl=hi&autoplay=1&cc_lang_pref=hi">
 		</iframe>
 	</div>`;
+	if(document.documentElement.clientWidth<720){
+		
+		videoElement=`<div id="ytplayer">
+		<iframe width='`+document.documentElement.clientWidth+`' height="500" 
+			src="https://www.youtube.com/embed/`+vid+`?enablejsapi=1&hl=hi&autoplay=1&cc_lang_pref=hi">
+		</iframe>
+		</div>`;
+	}
+
 	container.innerHTML=videoElement;
+	// TEST(vid);
 }
 
+var player;
+
+function TEST(vid){
+	function onYouTubeIframeAPIReady() {
+	    player = new YT.Player('ytplayer', {
+	        width: 800,
+	        height: 600,
+	        videoId: vid,
+	        playerVars: {
+	            color: 'white'
+	        },
+	        events: {
+	            onReady:test2
+	        }
+	    });
+	}
+	onYouTubeIframeAPIReady();
+	
+}
+
+function test2(){
+	console.log(player);
+}
