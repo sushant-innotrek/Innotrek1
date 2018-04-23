@@ -48,43 +48,44 @@ function formatResultView(thumb,Title,vid){
 function showVideo(vid){
 	var container = document.getElementById("mainContainer");
 	var videoElement=`<div id="ytplayer">
-		<iframe width="800" height="500" 
+		<iframe id="YTIframe" width="800" height="500" 
 			src="https://www.youtube.com/embed/`+vid+`?enablejsapi=1&hl=hi&autoplay=1&cc_lang_pref=hi">
 		</iframe>
 	</div>`;
 	if(document.documentElement.clientWidth<720){
 		
 		videoElement=`<div id="ytplayer">
-		<iframe width='`+document.documentElement.clientWidth+`' height="500" 
+		<iframe id="YTIframe" width='`+document.documentElement.clientWidth+`' height="500" 
 			src="https://www.youtube.com/embed/`+vid+`?enablejsapi=1&hl=hi&autoplay=1&cc_lang_pref=hi">
 		</iframe>
 		</div>`;
 	}
 
 	container.innerHTML=videoElement;
-	// TEST(vid);
+	TEST(vid);
 }
 
 var player;
 
-function TEST(vid){
+function TEST(){
+	var player;
 	function onYouTubeIframeAPIReady() {
-	    player = new YT.Player('ytplayer', {
-	        width: 800,
-	        height: 600,
-	        videoId: vid,
-	        playerVars: {
-	            color: 'white'
-	        },
-	        events: {
-	            onReady:test2
-	        }
-	    });
+	  player = new YT.Player('YTIframe', {
+	    events: {
+	      'onReady': onPlayerReady,
+	      'onStateChange': onPlayerStateChange
+	    }
+	  });
+	}
+
+	function onPlayerReady() {
+	  console.log(player);
+	  //do whatever you want here. Like, player.playVideo();
+	}
+
+	function onPlayerStateChange() {
+  		console.log("my state changed");
 	}
 	onYouTubeIframeAPIReady();
-	
 }
 
-function test2(){
-	console.log(player);
-}
