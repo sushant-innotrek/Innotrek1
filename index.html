@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PICWORD</title>
+	<!-- For Player Api -->
+	<script type="text/javascript" src="https://www.youtube.com/player_api"></script>
+	<!-- For JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- For IFrame Api -->
+	<script src="https://www.youtube.com/iframe_api"></script>
+	<!-- For Youtube Api -->
+	<script type="text/javascript" src="js/youtubeapi.js"></script>
+	<!-- Default Content Info -->
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Custom CSS Links -->
+	<link rel="stylesheet" type="text/css" href="css/color.css">
+	<link rel="stylesheet" type="text/css" href="css/desktop.css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+
+	<!-- REQUIRED FOR SYMBOL USED FOR SEARCH BUTTON  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+	<!-- NAVBAR CODE -->
+
+	<div class="topnav" id="myTopnav" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+		<img id="logo" src="img/logo.png">
+
+		<a id="btn_hamButton" class="fa fa-list-ul" onclick="hamFunction()"></a>
+		<a class="btn_home" href="/index.html" class="active">Videos</a>
+		<a class="btn_home" href="/news.html" >News</a>
+		<a class="btn_home" onclick="alert('Comming Soon..');">EBooks</a>
+		<a class="btn_home" href="/aboutus.html">About Us</a>
+		<a id="btn_visitor" style="pointer-events: none;">Visitors :</a>
+		<a id="counter" style="pointer-events: none;">Visitors :</a>
+		
+		<!-- Counter starts here -->
+		
+		
+
+	</div>
+	<!-- NAVBAR ENDS -->
+
+
+
+	<!-- MAIN CONTAINER STARTS HERE -->
+
+	<!-- SEARCH RESULTS GOES HERE -->
+	<div class="wrapper" id="holder" style="background: #f2f2f2 !important;">
+
+		<div class="Content" id="mainContainer">
+
+			<div style="height: 700px;background: transparent;">
+
+			</div>
+			<!-- This area is inflated by javascript -->
+		</div>
+
+		<!-- ADS GOES HERE -->
+		<div id="Ads">
+			<!-- For Search Bar -->
+			<span class="SearchBar">
+				<form class="example" onsubmit="return Search(this.search.value);">
+					<input type="text" placeholder="Search.." name="search">
+					<button type="submit">
+						<i class="fa fa-search"></i>
+					</button>
+				</form>
+			</span>
+			<!-- For Google Ads -->
+			<div class="GoogleAds">
+				<a href="https://bit.ly/2rdzh6B" target="_blank">
+					<img src="/ads/1.jpg" height="100%">
+				</a>
+			</div>
+			<!-- For Custom Ads -->
+			<div class="CustomAds">
+				<a href="https://www.youtube.com/watch?v=fj6qLnfibc0" target="_blank">
+					<img src="/ads/2.jpg" height="100%">
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- MAIN CONTAINER ENDS HERE -->
+
+	<!-- For Floating Button to scroll top -->
+	<a id="float" onclick="topFunction()">
+		<i class="	fa fa-arrow-up my-float"></i>
+	</a>
+
+
+
+	<!-- FOOTER PART  -->
+	<div class="footer" align="center">
+
+
+		<a style="pointer-events: none;">Designed & Developed by</a>
+
+		<a href="http://innotrek.in/" style="color: white;">&copy Innotrek Infocomm Pvt. Ltd.</a>
+		<br>
+
+		<a style="pointer-events: none;">Concept By</a>
+
+		<a style="pointer-events: none;">Chetan Chorada</a>
+
+
+	</div>
+	<!-- FOOTER PART ENDS -->
+	<div id="loading">
+		<img src="/img/loading.gif" style="height: 30px;width: 30px;margin-left:30px;"></img>
+		<a style="font-weight: bold;margin:10px;">Loading...
+			<a>
+	</div>
+
+
+
+
+
+</body>
+
+</html>

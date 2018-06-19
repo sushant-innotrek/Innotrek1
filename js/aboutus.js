@@ -38,7 +38,7 @@ function Search(searchstring) {
 /* For Hamburger Expansion in Mobile View */
 function hamFunction() {
 	if (ham_status == false) {
-		document.getElementById('myTopnav').style.height = "370px";
+		document.getElementById('myTopnav').style.height = "320px";
 		ham_status = true;
 	}
 	else {
@@ -69,8 +69,8 @@ function topFunction() {
 /* Called from Search Function to Display Results in mainContainer */
 function showResults(items) {
 	var container = document.getElementById("mainContainer");
-	container.innerHTML = "";
-	document.getElementById("loading").style.display = "none";
+	/* container.innerHTML = "";
+	document.getElementById("loading").style.display = "none"; */
 	document.getElementById("Ads").style.display = "grid";
 	for (i = 0; i < items.length; i++) {
 		var video = items[i].snippet;
@@ -78,7 +78,7 @@ function showResults(items) {
 		var Title = video.title;
 		var vid = items[i].id.videoId;
 
-		container.innerHTML += formatResultView(thumb, Title, vid);
+		//container.innerHTML += formatResultView(thumb, Title, vid);
 	}
 
 }

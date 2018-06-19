@@ -1,0 +1,175 @@
+@media screen and (max-width: 720px) and (orientation:portrait) {
+	html,body{
+		margin:0;
+		padding:0;
+		min-width: 100vw;
+		
+	}
+
+	.SearchBar{
+		display: block;
+		
+	}
+	
+
+	.wrapper{
+		overflow-y:scroll !important ; 
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas: 'Ads'
+							 'Content'; 	
+		
+		grid-gap: 1em;
+		padding: 50px 5px 50px 5px;	
+			 
+	}
+
+	.wrapper > div{
+		text-align: justify;
+		width: 100%;
+		overflow:none; 
+	}
+
+	.Ads{
+		
+		display: grid;
+		grid-template-columns: 1fr;
+
+		grid-area: Ads;
+		overflow: none;
+		align-items: center;
+    	justify-content: center;
+		grid-gap: 5px;
+		
+	}
+	
+	#ytplayer{
+        z-index: 0;
+        height:fit-content;
+        margin-left: 0px;
+        background-color: #333;
+        
+    }
+    #v_name{
+        margin-left: 0px;
+        text-align: center;
+        font-size: 10px;
+       
+    }
+       
+    
+    #subs{
+        text-align: center;
+        font-weight: bold;
+        font-size: 10px;
+        padding-top:10px;
+        padding-bottom: 10px;
+        margin-left: 0px;
+        background: #333;
+        color: #ddd;
+        
+    }
+
+	.Content{
+		grid-area: Content;
+		overflow: none;
+		display: grid;
+		grid-template-columns: 1fr; 
+		grid-gap: 1em;
+    }
+    
+
+	.ytplayer>iframe{
+		width: 100px;
+		height: 50px;
+		max-width: 400px;
+	}
+
+    .topnav{
+        height: 60px;
+        width: 100% !important;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        align-content: flex-start;
+        position: fixed;
+      top:0;
+      z-index:1;
+    }
+    #logo{
+        height: 30px;
+        width: 150px;
+        margin-top: 13px;
+        margin-left: 10px;
+
+      
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+    #btn_hamButton{
+        height: 60px;
+        align-items: right;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        padding:20px 0px 0px 0px ;
+  
+    }
+    .btn_home{
+      grid-column-start: 1;
+      grid-column-end: 4;
+      border-color: #fefefe;
+      border-top-width: 2px;
+      border-top-style: solid;
+      
+    }
+    
+    #btn_visitor{
+      grid-column-start: 1;
+      grid-column-end: 2;  
+    }
+    #txt_visitor{
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+    .navButtons{
+        width: 100%;
+    }
+    .topnav.responsive {position:fixed;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+
+    #float{
+        position:fixed;
+        display: none;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#1443ab;
+        color:#FFF;
+        opacity: 0.5;
+        border-radius:50px;
+        text-align:center;
+        transition: 0.3s; 
+animation-delay: 0.5s;
+-webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+   -moz-animation: fadein 0.5s; /* Firefox < 16 */
+    -ms-animation: fadein 0.5s; /* Internet Explorer */
+     -o-animation: fadein 0.5s; /* Opera < 12.1 */
+        animation: fadein 0.5s;
+        
+    }
+    .my-float{
+        margin-top:22px;
+            
+    }
+    
+}
